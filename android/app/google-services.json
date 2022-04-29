@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "615403203651",
+    "project_id": "myshopping-ea930",
+    "storage_bucket": "myshopping-ea930.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615403203651:android:8da4972d56f083fb9a38f6",
+        "android_client_info": {
+          "package_name": "com.myshopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615403203651-k9bgibmlcv4smkr8q51ljh8tg13k0e3p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiazH6ylPMnnUsk6Hoz_49ZO39KGSwkBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615403203651-k9bgibmlcv4smkr8q51ljh8tg13k0e3p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
