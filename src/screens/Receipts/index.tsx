@@ -6,6 +6,7 @@ import { Container, PhotoInfo } from "./styles";
 import { Header } from "../../components/Header";
 import { Photo } from "../../components/Photo";
 import { File, FileProps } from "../../components/File";
+import { Alert } from "react-native";
 
 export function Receipts() {
   const [photos, setPhotos] = useState<FileProps[]>([]);
@@ -20,7 +21,18 @@ export function Receipts() {
     setPhotoInfo(`Upload realizado em ${info.timeCreated}`);
   }
 
-  useEffect(() => {
+  async function handleDeleteImage(path: string) {
+    storage()
+      .ref(path)
+      .delete()
+      .then(() => {
+        Alert.alert("Imagem excluída com sucesso!");
+        fetchImages();
+      })
+      .catch((error) => console.error(error));
+  }
+
+  async function fetchImages() {
     storage()
       .ref("images")
       .list()
@@ -36,6 +48,10 @@ export function Receipts() {
 
         setPhotos(files);
       });
+  }
+
+  useEffect(() => {
+    fetchImages();
   }, []);
 
   return (
@@ -53,7 +69,7 @@ export function Receipts() {
           <File
             data={item}
             onShow={() => handleShowImage(item.path)}
-            onDelete={() => {}}
+            onDelete={() => handleDeleteImage(item.path)}
           />
         )}
         contentContainerStyle={{ paddingBottom: 100 }}
